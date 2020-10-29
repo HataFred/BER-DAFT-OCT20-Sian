@@ -46,7 +46,7 @@ from bank.trans
 group by type, operation, k_symbol;
 -- Query with the "order by" clause
 select type, operation, k_symbol, round(avg(balance),2)
-from bank.trans
+from bank.trans where k_symbol <> ' '
 group by type, operation, k_symbol
 order by type, operation, k_symbol;
 
